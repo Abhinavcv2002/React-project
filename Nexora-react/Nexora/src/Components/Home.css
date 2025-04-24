@@ -1,0 +1,46 @@
+.home {
+    font-family: Arial, sans-serif;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    color: white;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background: white;
+    color: #4e54c8;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .features {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .feature {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  
+  .footer {
+    margin-top: 4rem;
+    padding: 1rem 0;
+    background-color: #f0f0f0;
+    color: #444;
+  }
+  
