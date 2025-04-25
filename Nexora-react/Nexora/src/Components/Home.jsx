@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";  
+import Footer from "./Footer";
 import "./Home.css";
-import "./Navbar.jsx";
 
 export default function Home() {
   return (
     <div className="home">
+      <Navbar /> 
+      
       <header className="hero">
         <h1>Welcome to Nexora Institute</h1>
         <p>Your future starts here — learn, grow, and succeed.</p>
@@ -27,9 +30,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Nexora Institute. All rights reserved.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

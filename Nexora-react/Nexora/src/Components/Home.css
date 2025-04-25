@@ -1,6 +1,6 @@
 .home {
     font-family: Arial, sans-serif;
-    padding: 0 2rem;
+    padding: 0px;
     text-align: center;
   }
   
@@ -38,9 +38,10 @@
   }
   
   .footer {
-    margin-top: 4rem;
-    padding: 1rem 0;
-    background-color: #f0f0f0;
-    color: #444;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95rem;
   }
   
