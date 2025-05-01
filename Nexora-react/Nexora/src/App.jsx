@@ -4,7 +4,8 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Placements from "./Components/Placements";
-
+// import Course from "./Components/Course";
+// import Reviews from "./Components/Reviews";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Placements" element={<Placements />} />
+        {/* <Route path="/Course" element={<Course />} /> */}
+        {/* <Route path="/Reviews" element={<Reviews />} /> */}
       </Routes>
     </BrowserRouter>
   );

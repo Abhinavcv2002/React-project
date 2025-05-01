@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import "./Contact.css";
 
-export default function Contact() {
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [success, setSuccess] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:8000/api/contact/", formData);
+      setSuccess(true);
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Submission failed:", error);
+      setSuccess(false);
+    }
+  };
+  
   return (
     <div className="contact-page">
       <Navbar />
@@ -22,11 +47,13 @@ export default function Contact() {
         </div>
 
         <div className="contact-form">
-          <h2>Send Us a Message</h2>
+          <h2>Contact Us</h2>
+          {success === true && <p style={{ color: "green" }}>Message sent!</p>}
+          {success === false && <p style={{ color: "red" }}>Failed to send message.</p>}
           <form onSubmit={(e) => e.preventDefault()}>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <input name="name" type="text" placeholder="Your Name"  value={formData.name} onChange={handleChange} required />
+            <input name="email" type="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+            <textarea name="message" placeholder="Your Message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
             <button type="submit">Send Message</button>
           </form>
         </div>
